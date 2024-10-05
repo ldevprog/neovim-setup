@@ -4,7 +4,9 @@ local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "html", "cssls", "tsserver", "clangd", "gopls", "gradle_ls", "vuels" }
+local servers = { "luals", "html", "cssls", "tsserver", "clangd", "gopls", "gradle_ls", "vuels" }
+
+lspconfig.servers = servers
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
@@ -32,4 +34,15 @@ lspconfig.vuels.setup {
             client.resolved_capabilities.document_range_formatting = true
         end
     end,
+}
+
+-- clangd
+lspconfig.clangd.setup {
+    on_attach = function(client, bufnr)
+        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.documentRangeFormattingProvider = false
+        on_attach(client, bufnr)
+    end,
+    on_init = on_init,
+    capabilities = capabilities,
 }

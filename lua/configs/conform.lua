@@ -11,6 +11,23 @@ local options = {
         vue = { "prettier" },
         json = { "prettier" },
         tsx = { "prettier" },
+        c_cpp = { "clang-format" }, -- Hack
+        c = { "clang_format" },
+        cpp = { "clang_format" },
+        -- python = {}
+    },
+
+    formatters = {
+        clang_format = {
+            prepend_args = {
+                "-style={ \
+                IndentWidth: 4, \
+                TabWidth: 4, \
+                AccessModifierOffset: 0, \
+                IndentAccessModifiers: true, \
+                PackConstructorInitializers: Never}",
+            },
+        },
     },
 
     format_on_save = {
