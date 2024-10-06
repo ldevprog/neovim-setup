@@ -37,6 +37,7 @@ return {
                 "gopls",
                 "js-debug-adapter",
                 "typescript-language-server",
+                "clangd",
             },
         },
     },

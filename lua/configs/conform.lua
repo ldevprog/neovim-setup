@@ -20,12 +20,27 @@ local options = {
     formatters = {
         clang_format = {
             prepend_args = {
-                "-style={ \
-                IndentWidth: 4, \
-                TabWidth: 4, \
-                AccessModifierOffset: 0, \
-                IndentAccessModifiers: true, \
-                PackConstructorInitializers: Never}",
+                "--style=" .. vim.json.encode {
+                    IndentWidth = 4,
+                    TabWidth = 4,
+                    AccessModifierOffset = 0,
+                    IndentAccessModifiers = true,
+                    PackConstructorInitializers = "Never",
+                    BreakBeforeBraces = "Custom",
+                    BraceWrapping = {
+                        AfterClass = true,
+                        AfterEnum = true,
+                        AfterUnion = true,
+                        AfterStruct = false,
+                        AfterObjCDeclaration = true,
+                        AfterFunction = true,
+                        AfterControlStatement = true,
+                        AfterNamespace = true,
+                        AfterExternBlock = true,
+                        BeforeCatch = true,
+                        BeforeElse = true,
+                    },
+                },
             },
         },
     },

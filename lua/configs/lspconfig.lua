@@ -4,7 +4,7 @@ local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "html", "cssls", "tsserver", "clangd", "gopls", "gradle_ls", "vuels" }
+local servers = { "html", "cssls", "ts_ls", "clangd", "gopls", "gradle_ls", "vuels" }
 
 lspconfig.servers = servers
 
@@ -18,7 +18,7 @@ for _, lsp in ipairs(servers) do
 end
 
 -- typescript
-lspconfig.tsserver.setup {
+lspconfig.ts_ls.setup {
     on_attach = on_attach,
     on_init = on_init,
     capabilities = capabilities,
