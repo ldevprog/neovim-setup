@@ -22,9 +22,14 @@ vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
 
 vim.opt.cursorline = true
+
+vim.api.nvim_set_keymap("n", "<C-w>+", ":resize +10<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-w>-", ":resize -10<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-w>>", ":vertical resize +20<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-w><", ":vertical resize -20<CR>", { noremap = true, silent = true })
 
 local lazy_config = require "configs.lazy"
 

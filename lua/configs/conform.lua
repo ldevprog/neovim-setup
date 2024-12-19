@@ -14,6 +14,8 @@ local options = {
         c_cpp = { "clang-format" }, -- Hack
         c = { "clang_format" },
         cpp = { "clang_format" },
+        yaml = { "prettier" },
+        md = { "prettier" },
         -- python = {}
     },
 

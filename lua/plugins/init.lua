@@ -113,7 +113,8 @@ return {
     },
     {
         "Exafunction/codeium.vim",
-        lazy = false,
+        enabled = true,
+        lazy = true,
     },
     {
         "kdheepak/lazygit.nvim",
