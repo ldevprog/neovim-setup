@@ -1,21 +1,31 @@
 local options = {
     formatters_by_ft = {
         lua = { "stylua" },
-        css = { "prettier" },
-        scss = { "prettier" },
-        html = { "prettier" },
-        javascript = { "prettier" },
-        typescript = { "prettier" },
-        typescriptreact = { "prettier" },
-        javascriptreact = { "prettier" },
-        vue = { "prettier" },
-        json = { "prettier" },
-        tsx = { "prettier" },
+        -- css = { "eslint_d", "prettier" },
+        -- scss = { "eslint_d", "prettier" },
+        -- html = { "eslint_d", "prettier" },
+        -- javascript = { "eslint_d", "prettier" },
+        -- typescript = { "eslint_d", "prettier" },
+        -- typescriptreact = { "eslint_d", "prettier" },
+        -- javascriptreact = { "eslint_d", "prettier" },
+        --
+        --
+        css = { "eslint_d" },
+        scss = { "eslint_d" },
+        html = { "eslint_d" },
+        javascript = { "eslint_d" },
+        typescript = { "eslint_d" },
+        typescriptreact = { "eslint_d" },
+        javascriptreact = { "eslint_d" },
+
+        vue = { "eslint_d" },
+        json = { "eslint_d" },
+        tsx = { "eslint_d" },
         c_cpp = { "clang-format" }, -- Hack
         c = { "clang_format" },
         cpp = { "clang_format" },
-        yaml = { "prettier" },
-        md = { "prettier" },
+        yaml = { "eslint_d" },
+        md = { "eslint_d" },
         -- python = {}
     },
 

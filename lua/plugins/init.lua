@@ -114,7 +114,7 @@ return {
     {
         "Exafunction/codeium.vim",
         enabled = true,
-        lazy = true,
+        lazy = false,
     },
     {
         "kdheepak/lazygit.nvim",
