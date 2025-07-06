@@ -17,6 +17,7 @@ M.treesitter = {
         "markdown_inline",
         "prisma",
         "go",
+        "sql",
         "vuels",
     },
     indent = {
@@ -37,6 +38,8 @@ M.mason = {
         "clang-format",
         "node-debug2-adapter",
         "gopls",
+        "sqls",
+        "sql-formatter",
         "gradle_ls",
         "vuels",
     },

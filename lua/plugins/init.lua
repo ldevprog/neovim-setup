@@ -1,7 +1,7 @@
 return {
     {
         "stevearc/conform.nvim",
-        -- event = "BufWritePre", -- uncomment for format on save
+        event = "BufWritePre", -- uncomment for format on save
         config = function()
             require "configs.conform"
         end,
@@ -33,8 +33,10 @@ return {
                 "html-lsp",
                 "css-lsp",
                 "prettier",
+                "sql-formatter",
                 "eslint-lsp",
                 "gopls",
+                "sqls",
                 "js-debug-adapter",
                 "typescript-language-server",
                 "clangd",
@@ -53,6 +55,8 @@ return {
                 "typescript",
                 "javascript",
                 "go",
+                "json",
+                "sql",
             },
         },
     },
@@ -113,7 +117,7 @@ return {
     },
     {
         "Exafunction/codeium.vim",
-        enabled = true,
+        enabled = false,
         lazy = false,
     },
     {
@@ -134,5 +138,42 @@ return {
         keys = {
             { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
         },
+    },
+    { "NvChad/colorify", enabled = false },
+    {
+        "hrsh7th/nvim-cmp",
+        event = "InsertEnter", -- load on entering insert mode
+        dependencies = {
+            "hrsh7th/cmp-buffer", -- buffer completions
+            "hrsh7th/cmp-path", -- path completions
+            "hrsh7th/cmp-nvim-lsp", -- LSP completions
+            "saadparwaiz1/cmp_luasnip", -- snippet completions (optional)
+            "L3MON4D3/LuaSnip", -- snippet engine (optional)
+            "kristijanhusak/vim-dadbod-completion", -- dadbod completion source
+        },
+    },
+    {
+        "tpope/vim-dadbod",
+        lazy = false,
+    },
+    {
+        "kristijanhusak/vim-dadbod-ui",
+        dependencies = {
+            "tpope/vim-dadbod",
+            "kristijanhusak/vim-dadbod-completion",
+        },
+        cmd = {
+            "DBUI",
+            "DBUIToggle",
+            "DBUIAddConnection",
+            "DBUIFindBuffer",
+        },
+        ft = { "sql", "mysql", "plsql" },
+    },
+    {
+        "kristijanhusak/vim-dadbod-completion",
+        ft = { "sql", "mysql", "plsql" },
+        dependencies = "tpope/vim-dadbod",
+        config = function() end,
     },
 }
