@@ -26,6 +26,12 @@ vim.opt.relativenumber = true
 
 vim.opt.cursorline = true
 
+vim.filetype.add {
+    extension = {
+        http = "http",
+    },
+}
+
 local lazy_config = require "configs.lazy"
 
 -- load plugins

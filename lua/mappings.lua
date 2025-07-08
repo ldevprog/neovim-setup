@@ -115,3 +115,7 @@ cmp.setup {
         { name = "path" },
     },
 }
+
+-- Rest
+vim.keymap.set("n", "<leader>rr", "<cmd>Rest run<cr>", { desc = "Run HTTP request" })
+vim.keymap.set("n", "<leader>rl", "<cmd>Rest run last<cr>", { desc = "Re-run last request" })
