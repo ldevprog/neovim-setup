@@ -58,6 +58,7 @@ return {
                 "json",
                 "sql",
                 "http",
+                "proto",
             },
         },
     },
@@ -187,5 +188,9 @@ return {
                 table.insert(opts.ensure_installed, "http")
             end,
         },
+    },
+    {
+        "uarun/vim-protobuf", -- Syntax highlighting for .proto
+        ft = "proto",
     },
 }

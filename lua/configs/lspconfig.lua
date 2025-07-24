@@ -4,7 +4,7 @@ local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "html", "cssls", "ts_ls", "clangd", "gopls", "gradle_ls", "vuels", "pyright", "sqls" }
+local servers = { "html", "cssls", "ts_ls", "clangd", "gopls", "gradle_ls", "vuels", "pyright", "sqls", "protols" }
 
 lspconfig.servers = servers
 
@@ -46,3 +46,6 @@ lspconfig.clangd.setup {
     on_init = on_init,
     capabilities = capabilities,
 }
+
+-- protols
+lspconfig.protols.setup {}

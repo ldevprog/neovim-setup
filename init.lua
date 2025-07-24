@@ -32,6 +32,11 @@ vim.filetype.add {
     },
 }
 
+vim.o.foldenable = true
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+vim.o.foldmethod = "indent"
+vim.o.foldlevel = 99 -- very high number to open all folds
+
 local lazy_config = require "configs.lazy"
 
 -- load plugins

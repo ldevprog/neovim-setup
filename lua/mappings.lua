@@ -4,10 +4,10 @@ require "nvchad.mappings"
 
 local map = vim.keymap.set
 
-vim.api.nvim_set_keymap("n", "<C-w>+", ":resize +5<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-w>-", ":resize -5<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-w>>", ":vertical resize +15<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-w><", ":vertical resize -15<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-w><C-h>", ":resize +5<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-w><C-;>", ":resize -5<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-w><C-.>", ":vertical resize +15<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-w><C-,>", ":vertical resize -15<CR>", { noremap = true, silent = true })
 
 -- Changes to fit vim keybindings
 map("n", "s", "cl", { noremap = true })
@@ -118,4 +118,3 @@ cmp.setup {
 
 -- Rest
 vim.keymap.set("n", "<leader>rr", "<cmd>Rest run<cr>", { desc = "Run HTTP request" })
-vim.keymap.set("n", "<leader>rl", "<cmd>Rest run last<cr>", { desc = "Re-run last request" })
