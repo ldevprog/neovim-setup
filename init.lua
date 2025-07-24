@@ -29,6 +29,7 @@ vim.opt.cursorline = true
 vim.filetype.add {
     extension = {
         http = "http",
+        grpc = "grpc",
     },
 }
 

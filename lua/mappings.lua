@@ -118,3 +118,6 @@ cmp.setup {
 
 -- Rest
 vim.keymap.set("n", "<leader>rr", "<cmd>Rest run<cr>", { desc = "Run HTTP request" })
+
+-- GRPC
+vim.keymap.set("n", "<leader>gg", "<cmd>Grpc<cr>", { desc = "Run GRPC request" })
