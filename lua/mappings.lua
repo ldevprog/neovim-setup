@@ -45,20 +45,6 @@ end, { desc = "Run file test" })
 map("n", "<leader>to", ":Neotest output<CR>", { desc = "Show test output" })
 map("n", "<leader>ts", ":Neotest summary<CR>", { desc = "Show test summary" })
 
--- Debug
-map("n", "<leader>du", function()
-    require("dapui").toggle()
-end, { desc = "Toggle Debug UI" })
-map("n", "<leader>db", function()
-    require("dap").toggle_breakpoint()
-end, { desc = "Toggle Breakpoint" })
-map("n", "<leader>ds", function()
-    require("dap").continue()
-end, { desc = "Start" })
-map("n", "<leader>dn", function()
-    require("dap").step_over()
-end, { desc = "Step Over" })
-
 -- Git
 map("n", "<leader>gl", ":Flog<CR>", { desc = "Git Log" })
 map("n", "<leader>gf", ":DiffviewFileHistory<CR>", { desc = "Git File History" })
@@ -118,6 +104,23 @@ cmp.setup {
 
 -- Rest
 vim.keymap.set("n", "<leader>rr", "<cmd>Rest run<cr>", { desc = "Run HTTP request" })
-
 -- GRPC
 vim.keymap.set("n", "<leader>gg", "<cmd>Grpc<cr>", { desc = "Run GRPC request" })
+
+-- Dap
+local dap = require "dap"
+local dapui = require "dapui"
+
+vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint, { desc = "DAP: Toggle Breakpoint" })
+vim.keymap.set("n", "<leader>dgb", dap.run_to_cursor, { desc = "DAP: Run to Cursor" })
+
+vim.keymap.set("n", "<leader>d?", function()
+    dapui.eval(nil, { enter = true })
+end, { desc = "DAP: Eval under Cursor" })
+
+vim.keymap.set("n", "<leader>dc", dap.continue, { desc = "DAP: Continue" })
+vim.keymap.set("n", "<F2>", dap.step_into, { desc = "DAP: Step Into" })
+vim.keymap.set("n", "<F3>", dap.step_over, { desc = "DAP: Step Over" })
+vim.keymap.set("n", "<F4>", dap.step_out, { desc = "DAP: Step Out" })
+vim.keymap.set("n", "<F5>", dap.step_back, { desc = "DAP: Step Back" })
+vim.keymap.set("n", "<F6>", dap.restart, { desc = "DAP: Restart" })

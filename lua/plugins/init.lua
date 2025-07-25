@@ -242,8 +242,55 @@ return {
         version = "*",
         opts = {
             mappings = {
-                add = "sa",
+                add = "zn",
+                delete = "",
+                find = "",
+                find_left = "",
+                highlight = "",
+                replace = "",
+                update_n_lines = "",
+                suffix_last = "",
+                suffix_next = "",
             },
         },
+    },
+    {
+        "mfussenegger/nvim-dap",
+        dependencies = {
+            "leoluz/nvim-dap-go",
+            "rcarriga/nvim-dap-ui",
+            "nvim-neotest/nvim-nio",
+            "williamboman/mason.nvim",
+        },
+        config = function()
+            local dap = require "dap"
+            local ui = require "dapui"
+
+            require("dapui").setup()
+            require("dap-go").setup()
+
+            -- Handled by nvim-dap-go
+            -- dap.adapters.go = {
+            --   type = "server",
+            --   port = "${port}",
+            --   executable = {
+            --     command = "dlv",
+            --     args = { "dap", "-l", "127.0.0.1:${port}" },
+            --   },
+            -- }
+
+            dap.listeners.before.attach.dapui_config = function()
+                ui.open()
+            end
+            dap.listeners.before.launch.dapui_config = function()
+                ui.open()
+            end
+            dap.listeners.before.event_terminated.dapui_config = function()
+                ui.close()
+            end
+            dap.listeners.before.event_exited.dapui_config = function()
+                ui.close()
+            end
+        end,
     },
 }
