@@ -293,4 +293,14 @@ return {
             end
         end,
     },
+    {
+        "olexsmir/gopher.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim", -- required
+        },
+        config = function()
+            require("gopher").setup()
+        end,
+        ft = "go",
+    },
 }
