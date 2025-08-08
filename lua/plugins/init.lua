@@ -303,4 +303,11 @@ return {
         end,
         ft = "go",
     },
+    {
+        "MagicDuck/grug-far.nvim",
+        lazy = false,
+        config = function()
+            require("grug-far").setup {}
+        end,
+    },
 }

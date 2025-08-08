@@ -129,6 +129,10 @@ vim.keymap.set("n", "<F6>", dap.restart, { desc = "DAP: Restart" })
 vim.keymap.set("n", "gtc", "<cmd>:GoTagClear<cr>", { desc = "GoTagClear" })
 vim.keymap.set("n", "gtj", "<cmd>:GoTagAdd json<cr>", { desc = "GoTagAdd json" })
 vim.keymap.set("n", "gty", "<cmd>:GoTagAdd yaml<cr>", { desc = "GoTagAdd yaml" })
+vim.keymap.set("n", "gtd", "<cmd>:GoTagAdd db<cr>", { desc = "GoTagAdd db" })
 vim.keymap.set("n", "gie", "<cmd>:GoIfErr<cr>", { desc = "Go If Err" })
 vim.keymap.set("n", "gta", "<cmd>:GoTestsAll<cr>", { desc = "Go Tests All" })
 vim.keymap.set("n", "gto", "<cmd>:GoTestAdd<cr>", { desc = "Go Test Add" })
+
+-- Grug
+vim.keymap.set("n", "<leader>sg", "<cmd>:GrugFar<cr>", { desc = "GrugFar" })

@@ -6,12 +6,12 @@ local M = {}
 
 M.ui = {
     theme = "catppuccin",
-    transparency = true,
+    transparency = false,
     statusline = {
         theme = "minimal",
     },
     nvdash = {
-        load_on_startup = true,
+        load_on_startup = false,
         header = {
             "                                                     ",
             "  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
