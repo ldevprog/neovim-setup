@@ -60,6 +60,10 @@ require("lazy").setup({
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
 
+vim.api.nvim_set_hl(0, "Search", { bg = "#4e88ff", fg = "#ffffff" }) -- blue background, white text
+vim.api.nvim_set_hl(0, "IncSearch", { bg = "#ff7e00", fg = "#ffffff", bold = true }) -- vibrant orange
+vim.api.nvim_set_hl(0, "CurSearch", { bg = "#ff7e00", fg = "#ffffff", bold = true }) -- vibrant orange
+
 require "nvchad.autocmds"
 
 vim.schedule(function()

@@ -135,4 +135,4 @@ vim.keymap.set("n", "gta", "<cmd>:GoTestsAll<cr>", { desc = "Go Tests All" })
 vim.keymap.set("n", "gto", "<cmd>:GoTestAdd<cr>", { desc = "Go Test Add" })
 
 -- Grug
-vim.keymap.set("n", "<leader>sg", "<cmd>:GrugFar<cr>", { desc = "GrugFar" })
+vim.keymap.set("n", "<leader>gf", "<cmd>:GrugFar<cr>", { desc = "GrugFar" })

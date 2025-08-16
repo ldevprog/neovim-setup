@@ -7,6 +7,27 @@ return {
         end,
     },
     {
+        "goolord/alpha-nvim",
+        event = "VimEnter",
+        config = function()
+            local alpha = require "alpha"
+            local dashboard = require "alpha.themes.dashboard"
+
+            dashboard.section.header.val = {
+                "                                                     ",
+                "  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
+                "  ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ",
+                "  ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ",
+                "  ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ",
+                "  ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
+                "  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
+                "                                                     ",
+            }
+
+            alpha.setup(dashboard.config)
+        end,
+    },
+    {
         "christoomey/vim-tmux-navigator",
         lazy = false,
         cmd = {
@@ -218,15 +239,6 @@ return {
             damping_insert_mode = 0.8, -- 0.7      [0, 1]
             distance_stop_animating = 0.5, -- 0.1      > 0
             time_interval = 10, -- milliseconds
-
-            -- cursor_color = "#ff8800",
-            -- stiffness = 0.3,
-            -- trailing_stiffness = 0.1,
-            -- damping = 0.5,
-            -- trailing_exponent = 5,
-            -- never_draw_over_target = true,
-            -- hide_target_hack = true,
-            -- gamma = 1,
         },
     },
     {
@@ -309,5 +321,25 @@ return {
         config = function()
             require("grug-far").setup {}
         end,
+    },
+    {
+        "folke/flash.nvim",
+        event = "VeryLazy",
+        ---@type Flash.Config
+        opts = {
+            modes = {
+                search = {
+                    enabled = true,
+                },
+                char = {
+                    jump_labels = true,
+                },
+            },
+        },
+        -- stylua: ignore
+        keys = {
+          { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+          { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+        },
     },
 }
